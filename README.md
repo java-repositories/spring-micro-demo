@@ -16,4 +16,11 @@
 - eureka-server.properties - конкретный сервис
 
 ## Актуатор
+
+<details>
+  <summary>Скриншоты</summary>
+
 ![Актуатор](./images/actuator.png)
+
+</details>
+ 
