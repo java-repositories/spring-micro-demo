@@ -1,4 +1,4 @@
-# Spring Micro Demo
+# Spring Microservices Demo
 
 ## Useful links
 
