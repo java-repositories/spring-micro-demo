@@ -15,7 +15,4 @@
 - api-gateway.properties - конкретный сервис
 - eureka-server.properties - конкретный сервис
 
-<details>
-  <summary>Актуатор</summary>
-![](./images/actuator.png)
-</details>
+![Актуатор](./images/actuator.png)
