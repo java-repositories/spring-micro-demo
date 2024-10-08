@@ -14,3 +14,8 @@
 - application-micro.properties - считают, кому нужен профайл micro
 - api-gateway.properties - конкретный сервис
 - eureka-server.properties - конкретный сервис
+
+<details>
+  <summary>Актуатор</summary>
+![](./images/actuator.png)
+</details>
