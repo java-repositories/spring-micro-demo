@@ -1,0 +1,42 @@
+services:
+
+  github-config-server:
+    image: 'demo/github-config-server:1.0.0'
+    ports:
+      - '8888:8888'
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8888/eserver/default" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    environment:
+      - GITHUB_TOKEN=1111
+
+  eureka-server:
+    image: 'demo/eureka-server:1.0.0'
+    ports:
+      - '8761:8761'
+    depends_on:
+      github-config-server:
+        condition: service_healthy
+
+#  api-gateway:
+#    image: 'demo/api-gateway:1.0.0'
+#    ports:
+#      - '8765:8765'
+#    depends_on:
+#      - eureka-server
+#
+#  eureka-client:
+#    image: 'demo/eureka-client:1.0.0'
+#    ports:
+#      - '????:????'
+#    depends_on:
+#      - api-gateway
+#
+#  eureka-client-2:
+#    image: 'demo/eureka-client-2:1.0.0'
+#    ports:
+#      - '????:????'
+#    depends_on:
+#      - api-gateway

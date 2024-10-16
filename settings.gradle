@@ -1,7 +1,14 @@
 rootProject.name = 'spring-micro-demo'
 
-includeBuild 'eureka-server'
-includeBuild 'eureka-client'
-includeBuild 'api-gateway'
-includeBuild 'eureka-client-2'
-includeBuild 'github-config-server'
+//includeBuild 'eureka-server'
+//includeBuild 'eureka-client'
+//includeBuild 'api-gateway'
+//includeBuild 'eureka-client-2'
+//includeBuild 'github-config-server'
+
+// включим как проекты, чтобы можно было скопом билдить
+include 'eureka-server'
+include 'eureka-client'
+include 'api-gateway'
+include 'eureka-client-2'
+include 'github-config-server'

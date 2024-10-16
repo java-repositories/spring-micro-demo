@@ -24,3 +24,21 @@
 
 </details>
  
+## Docker
+
+Docker version 27.2.0, build 3ab4256
+
+Нужно использовать host.docker.internal вместо localhost.
+
+```bash
+gradle :build
+
+docker build -f github-config-server/Dockerfile -t demo/github-config-server:1.0.0 .
+docker build -f eureka-server/Dockerfile -t demo/eureka-server:1.0.0 .
+docker build -f eureka-client/Dockerfile -t demo/eureka-client:1.0.0 .
+docker build -f eureka-client-2/Dockerfile -t demo/eureka-client-2:1.0.0 .
+docker build -f api-gateway/Dockerfile -t demo/api-gateway:1.0.0 .
+
+docker compose up
+
+```
