@@ -16,16 +16,23 @@ services:
     image: 'demo/eureka-server:1.0.0'
     ports:
       - '8761:8761'
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8761" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
     depends_on:
       github-config-server:
         condition: service_healthy
 
-#  api-gateway:
-#    image: 'demo/api-gateway:1.0.0'
-#    ports:
-#      - '8765:8765'
-#    depends_on:
-#      - eureka-server
+  api-gateway:
+    image: 'demo/api-gateway:1.0.0'
+    ports:
+      - '8765:8765'
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+
 #
 #  eureka-client:
 #    image: 'demo/eureka-client:1.0.0'
