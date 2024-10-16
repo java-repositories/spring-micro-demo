@@ -10,7 +10,7 @@ services:
       timeout: 10s
       retries: 5
     environment:
-      - GITHUB_TOKEN=1111
+      - GITHUB_TOKEN= # поставить свой
 
   eureka-server:
     image: 'demo/eureka-server:1.0.0'
@@ -33,17 +33,19 @@ services:
       eureka-server:
         condition: service_healthy
 
-#
-#  eureka-client:
-#    image: 'demo/eureka-client:1.0.0'
-#    ports:
-#      - '????:????'
-#    depends_on:
-#      - api-gateway
-#
-#  eureka-client-2:
-#    image: 'demo/eureka-client-2:1.0.0'
-#    ports:
-#      - '????:????'
-#    depends_on:
-#      - api-gateway
+  eureka-client:
+    image: 'demo/eureka-client:1.0.0'
+    ports:
+      - '63443:63443'
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+
+  eureka-client-2:
+    image: 'demo/eureka-client-2:1.0.0'
+    ports:
+      - '63444:63444'
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+
