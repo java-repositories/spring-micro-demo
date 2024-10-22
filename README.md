@@ -42,3 +42,8 @@ docker build -f api-gateway/Dockerfile -t demo/api-gateway:1.0.0 .
 docker compose up
 
 ```
+
+## Фикс gradlew
+```bash
+git update-index --chmod=+x gradlew
+```

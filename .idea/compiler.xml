@@ -2,9 +2,18 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="21">
+      <module name="api-gateway" target="17" />
+      <module name="api-gateway.main" target="17" />
+      <module name="api-gateway.test" target="17" />
+      <module name="eureka-client" target="17" />
+      <module name="eureka-client.main" target="17" />
+      <module name="eureka-client.test" target="17" />
       <module name="eureka-server" target="17" />
       <module name="eureka-server.main" target="17" />
       <module name="eureka-server.test" target="17" />
+      <module name="github-config-server" target="17" />
+      <module name="github-config-server.main" target="17" />
+      <module name="github-config-server.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
