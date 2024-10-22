@@ -23,4 +23,8 @@
 ![Актуатор](./images/actuator.png)
 
 </details>
- 
+
+## Фикс gradlew
+```bash
+git update-index --chmod=+x gradlew
+```
